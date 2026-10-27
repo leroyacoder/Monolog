@@ -1,0 +1,767 @@
+.interfeys.is-pikseli {
+    filter: url(#pikseli);
+}
+
+.efekty {
+    position: absolute;
+    inset: 0;
+    z-index: 10;
+    overflow: hidden;
+    pointer-events: none;
+}
+
+.efekty > * {
+    position: absolute;
+    pointer-events: none;
+}
+
+.shum {
+    inset: -12%;
+    opacity: 0.6;
+    background-repeat: repeat;
+    image-rendering: pixelated;
+    will-change: transform;
+    animation: shum_sdvig 0.7s steps(1, end) infinite;
+}
+
+@keyframes shum_sdvig {
+    0%   { transform: translate(0, 0); }
+    20%  { transform: translate(-3%, 2%); }
+    40%  { transform: translate(2%, -4%); }
+    60%  { transform: translate(-4%, -1%); }
+    80%  { transform: translate(3%, 4%); }
+}
+
+.polosy {
+    inset: 0;
+    background: repeating-linear-gradient(
+        to bottom,
+        rgba(0, 0, 0, 0.24) 0,
+        rgba(0, 0, 0, 0.24) 1px,
+        rgba(0, 0, 0, 0) 1px,
+        rgba(0, 0, 0, 0) 3px
+    );
+}
+
+.vhs_polosa {
+    left: 0;
+    right: 0;
+    top: -22%;
+    height: 18%;
+    background: linear-gradient(
+        to bottom,
+        rgba(255, 255, 255, 0) 0%,
+        rgba(255, 255, 255, 0.045) 35%,
+        rgba(255, 255, 255, 0.1) 58%,
+        rgba(255, 255, 255, 0.03) 82%,
+        rgba(255, 255, 255, 0) 100%
+    );
+    will-change: transform;
+    animation: vhs_polosa 9s linear infinite;
+}
+
+@keyframes vhs_polosa {
+    0%   { transform: translateY(0); }
+    100% { transform: translateY(640%); }
+}
+
+.vhs_sbo {
+    left: 0;
+    right: 0;
+    top: 40%;
+    height: 0.7%;
+    opacity: 0;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), rgba(255, 255, 255, 0.3) 20%, rgba(255, 255, 255, 0.12) 65%, rgba(255, 255, 255, 0));
+}
+
+.vhs_sbo.is-aktivno {
+    opacity: 1;
+}
+
+.steklo {
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.kursor {
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 9;
+    width: 0;
+    height: 0;
+    pointer-events: none;
+    opacity: 0;
+    will-change: transform;
+}
+
+.kursor.is-vidno {
+    opacity: 1;
+}
+
+.kursor img {
+    position: absolute;
+    display: none;
+    max-width: none;
+    image-rendering: pixelated;
+}
+
+.kursor[data-vid='strelka'] .kursor_strelka {
+    display: block;
+    left: -0.285714cqw;
+    top: -0.285714cqw;
+    width: 5.714286cqw;
+    height: 7.142857cqw;
+}
+
+.kursor[data-vid='ew'] .kursor_ew {
+    display: block;
+    left: -3.285714cqw;
+    top: -1.857143cqw;
+    width: 6.571429cqw;
+    height: 3.714286cqw;
+}
+
+.kursor[data-vid='ns'] .kursor_ns {
+    display: block;
+    left: -1.857143cqw;
+    top: -3.285714cqw;
+    width: 3.714286cqw;
+    height: 6.571429cqw;
+}
+
+.kursor[data-vid='nwse'] .kursor_nwse {
+    display: block;
+    left: -3.285714cqw;
+    top: -3.285714cqw;
+    width: 6.571429cqw;
+    height: 6.571429cqw;
+}
+
+.kursor[data-vid='nesw'] .kursor_nesw {
+    display: block;
+    left: -3.285714cqw;
+    top: -3.285714cqw;
+    width: 6.571429cqw;
+    height: 6.571429cqw;
+}
+
+.kursor.is-nazhat .kursor_strelka {
+    transform: translate(0.142857cqw, 0.142857cqw);
+}
+
+.peregruzka {
+    position: absolute;
+    inset: 0;
+    z-index: 8;
+    display: none;
+    background: var(--fon-obnovleniya, #3D62A9);
+    color: #D9D9D9;
+    --kl: 1.142857cqw;
+}
+
+.peregruzka.is-aktivna {
+    display: block;
+}
+
+.avatar_os {
+    position: absolute;
+    left: 27.142857cqw;
+    top: 10cqw;
+    width: 45.714286cqw;
+    height: 34.5cqw;
+    transform-origin: 50% 100%;
+}
+
+.golova_os,
+.os_lico {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.os_ochki {
+    position: absolute;
+    left: 4.08%;
+    top: 44.5%;
+    width: 93.33%;
+    height: 33.15%;
+    transition: transform 0.22s ease-out;
+}
+
+.os_blik {
+    position: absolute;
+    width: 6.857143cqw;
+    height: 6.857143cqw;
+    opacity: 0;
+}
+
+.os_blik_1 { left: 34cqw; top: 11.714286cqw; }
+.os_blik_2 { left: 40.357143cqw; top: 17.785714cqw; width: 4.285714cqw; height: 4.285714cqw; }
+.os_blik_3 { left: 0.785714cqw; top: 13.714286cqw; width: 4.285714cqw; height: 4.285714cqw; }
+
+.nadpis_obnovleniya {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 48.285714cqw;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    --t: 3.428571cqw;
+}
+
+.shkala_obnovleniya {
+    position: absolute;
+    left: 28.571429cqw;
+    top: 55cqw;
+    width: 42.857143cqw;
+    height: 3.714286cqw;
+    background: var(--salatovyy);
+    box-shadow: inset 0 0 0 0.214286cqw #D9D9D9;
+    visibility: hidden;
+}
+
+.shkala_obnovleniya .kvadratik {
+    top: 0.214286cqw;
+    height: 3.285714cqw;
+    --shag: calc((42.428571cqw - 0.214286cqw) / 21);
+    background: #2F374A;
+    box-shadow: inset 0.214286cqw 0 0 #D9D9D9, inset -0.214286cqw 0 0 #D9D9D9;
+}
+
+.shkala_obnovleniya .kvadratik:first-child {
+    box-shadow: inset -0.214286cqw 0 0 #D9D9D9;
+}
+
+.shkala_obnovleniya .kvadratik:last-child {
+    box-shadow: inset 0.214286cqw 0 0 #D9D9D9;
+}
+
+.peregruzka[data-faza='privetstvie'] .golova_os {
+    animation: kachanie_golovy 1.2s ease-in-out infinite;
+    transform-origin: 50% 90%;
+}
+
+.peregruzka[data-faza='privetstvie'] .os_ochki {
+    animation: pod_ochki 1.8s ease-in-out infinite;
+}
+
+.peregruzka[data-faza='privetstvie'] .os_blik_1 {
+    animation: blik 1.8s ease-out 0.6s infinite;
+}
+
+.peregruzka[data-faza='privetstvie'] .os_blik_2 {
+    animation: blik 1.8s ease-out 0.85s infinite;
+}
+
+@keyframes kachanie_golovy {
+    0%, 100% { transform: rotate(0); }
+    25%      { transform: rotate(-4deg); }
+    75%      { transform: rotate(4deg); }
+}
+
+@keyframes pod_ochki {
+    0%, 70%, 100% { transform: translateY(0); }
+    35%           { transform: translateY(calc(var(--kl) * -2.2)); }
+}
+
+@keyframes blik {
+    0%   { opacity: 0; transform: scale(0.2) rotate(0); }
+    18%  { opacity: 1; transform: scale(1.1) rotate(20deg); }
+    40%  { opacity: 1; transform: scale(0.8) rotate(35deg); }
+    60%, 100% { opacity: 0; transform: scale(0.2) rotate(45deg); }
+}
+
+.peregruzka[data-faza='zagruzka'] .shkala_obnovleniya,
+.peregruzka[data-faza='gotovo'] .shkala_obnovleniya {
+    visibility: visible;
+}
+
+.peregruzka[data-faza='zagruzka'] .os_ochki {
+    transform: translate(calc(var(--kl) * var(--vzglyad, -2)), calc(var(--kl) * 1.2));
+}
+
+.peregruzka[data-faza='zagruzka'] .golova_os {
+    transform: translateY(var(--kl)) rotate(0.001deg);
+}
+
+.peregruzka[data-faza='gotovo'] .avatar_os {
+    animation: pryzhok_os 2.2s ease-in-out 1;
+}
+
+.peregruzka[data-faza='gotovo'] .os_ochki {
+    animation: ochki_v_pryzhke 2.2s ease-in-out 1;
+}
+
+.peregruzka[data-faza='gotovo'] .os_blik_1,
+.peregruzka[data-faza='gotovo'] .os_blik_3 {
+    animation: blik 2.2s ease-out 0.6s 1;
+}
+
+.peregruzka[data-faza='gotovo'] .os_blik_2 {
+    animation: blik 2.2s ease-out 0.9s 1;
+}
+
+@keyframes pryzhok_os {
+    0%, 100% { transform: translateY(0) scale(1, 1); }
+    20%      { transform: translateY(calc(var(--kl) * 0.3)) scale(1.03, 0.97); }
+    50%      { transform: translateY(calc(var(--kl) * -2.4)) scale(0.99, 1.01); }
+    78%      { transform: translateY(calc(var(--kl) * 0.2)) scale(1.02, 0.98); }
+}
+
+@keyframes ochki_v_pryzhke {
+    0%, 20%, 100% { transform: translateY(0); }
+    50%           { transform: translateY(calc(var(--kl) * 0.5)); }
+    78%           { transform: translateY(calc(var(--kl) * -0.3)); }
+}
+
+.zapusk {
+    position: absolute;
+    inset: 0;
+    z-index: 9;
+    background: #000;
+    color: #D9D9D9;
+    --kl: 1.142857cqw;
+}
+
+.zapusk > * {
+    position: absolute;
+    inset: 0;
+}
+
+.zapusk[data-faza='skvoz'] {
+    background: transparent;
+    pointer-events: none;
+}
+
+.zapusk[data-faza='skvoz'] .zapusk_sistema {
+    display: none;
+}
+
+.zapusk_vkl {
+    display: none;
+}
+
+.zapusk[data-faza='vykl'] .zapusk_vkl {
+    display: block;
+}
+
+.knopka_pitaniya {
+    position: absolute;
+    left: 43.571429cqw;
+    top: 27.857143cqw;
+    width: 12.857143cqw;
+    height: 12.857143cqw;
+    display: grid;
+    place-items: center;
+    background: #BDCEBC;
+    box-shadow: inset 0 0 0 0.357143cqw #271E17, inset 0.571429cqw 0.571429cqw 0 #E4EDE3, inset -0.571429cqw -0.571429cqw 0 #8FA08E, 0.714286cqw 0.714286cqw 0 #2F2F2F;
+}
+
+.znak_pitaniya {
+    width: 6.857143cqw;
+    height: 6.857143cqw;
+    fill: #271E17;
+}
+
+.knopka_pitaniya.is-nazhata {
+    transform: translate(0.571429cqw, 0.571429cqw);
+    box-shadow: inset 0 0 0 0.357143cqw #271E17, inset -0.571429cqw -0.571429cqw 0 #E4EDE3, inset 0.571429cqw 0.571429cqw 0 #8FA08E, 0.142857cqw 0.142857cqw 0 #2F2F2F;
+}
+
+.podskazka_vkl {
+    position: absolute;
+    left: 0;
+    right: 0;
+    top: 43.571429cqw;
+    margin: 0;
+    text-align: center;
+    --t: 2.428571cqw;
+    color: rgba(217, 217, 217, 0.75);
+    animation: migat_kursor 1.4s steps(1) infinite;
+}
+
+.zapusk_luch {
+    inset: auto 0 auto 0;
+    top: 50%;
+    height: 0.428571cqw;
+    margin-top: -0.214286cqw;
+    background: #F4F1E6;
+    box-shadow: 0 0 2.857143cqw 0.714286cqw rgba(244, 241, 230, 0.55);
+    transform: scale(0, 1);
+    opacity: 0;
+}
+
+.zapusk[data-faza='luch'] .zapusk_luch {
+    animation: vklyuchenie 1.4s ease-out forwards;
+}
+
+@keyframes vklyuchenie {
+    0%   { opacity: 1; transform: scale(0.01, 0.4); }
+    12%  { opacity: 1; transform: scale(0.02, 0.6); }
+    35%  { opacity: 1; transform: scale(1, 0.6); }
+    55%  { opacity: 1; transform: scale(1, 180); }
+    62%  { opacity: 0.4; transform: scale(1, 180); }
+    68%  { opacity: 0.9; transform: scale(1, 180); }
+    100% { opacity: 0; transform: scale(1, 180); }
+}
+
+.zapusk_bios {
+    visibility: hidden;
+}
+
+.zapusk[data-faza='bios'] .zapusk_bios {
+    visibility: visible;
+    animation: drozh_kartinki 0.18s steps(2) 6;
+}
+
+@keyframes drozh_kartinki {
+    0%   { transform: translate(0, 0.142857cqw); }
+    50%  { transform: translate(-0.142857cqw, -0.071429cqw); }
+    100% { transform: translate(0, 0); }
+}
+
+.bios_shapka {
+    position: absolute;
+    left: 7.857143cqw;
+    top: 5.714286cqw;
+    right: 7.857143cqw;
+    height: 10cqw;
+    border-bottom: 0.285714cqw solid #4A4A4A;
+}
+
+.bios_logo {
+    position: absolute;
+    right: 0;
+    top: 0;
+    width: 10.714286cqw;
+    height: 8.071429cqw;
+    animation: migat_kursor 2.4s steps(1) infinite;
+}
+
+.bios_logo .os_lico {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.bios_zagolovok,
+.bios_versiya {
+    margin: 0;
+    white-space: pre;
+}
+
+.bios_zagolovok {
+    --t: 3.428571cqw;
+    color: #FAC345;
+    text-transform: uppercase;
+}
+
+.bios_versiya {
+    margin-top: 1.142857cqw;
+    --t: 2.142857cqw;
+    color: rgba(217, 217, 217, 0.6);
+}
+
+.bios_stroki {
+    position: absolute;
+    left: 7.857143cqw;
+    top: 18.571429cqw;
+    right: 7.857143cqw;
+}
+
+.bios_stroki p {
+    margin: 0 0 0.857143cqw;
+    --t: 2.428571cqw;
+    white-space: pre;
+}
+
+.bios_stroki .ok {
+    color: #8FD694;
+}
+
+.bios_stroki .seryy {
+    color: rgba(217, 217, 217, 0.55);
+}
+
+.bios_stroki p:last-child::after {
+    content: '_';
+    animation: migat_kursor 0.5s steps(1) infinite;
+}
+
+@keyframes migat_kursor {
+    50% { opacity: 0; }
+}
+
+.zapusk_sistema {
+    background: #3D62A9;
+    visibility: hidden;
+}
+
+.zapusk[data-faza='sistema'] .zapusk_sistema,
+.zapusk[data-faza='privet'] .zapusk_sistema,
+.zapusk[data-faza='bloki'] .zapusk_sistema {
+    visibility: visible;
+}
+
+.zapusk[data-faza='sistema'] .shkala_obnovleniya {
+    visibility: visible;
+}
+
+.zapusk[data-faza='sistema'] .os_ochki {
+    transform: translate(calc(var(--kl) * var(--vzglyad, -2)), calc(var(--kl) * 1.2));
+}
+
+.zapusk[data-faza='sistema'] .golova_os {
+    transform: translateY(var(--kl)) rotate(0.001deg);
+}
+
+.zapusk[data-faza='sistema'] .avatar_os {
+    animation: poyavlenie_avatara 0.8s cubic-bezier(0.3, 1.6, 0.5, 1);
+}
+
+@keyframes poyavlenie_avatara {
+    0%   { transform: translateY(8.571429cqw) scale(0.4); }
+    100% { transform: translateY(0) scale(1); }
+}
+
+.zapusk_privet {
+    position: absolute;
+    inset: auto 0 auto 0;
+    top: 50cqw;
+    margin: 0;
+    text-align: center;
+    text-transform: uppercase;
+    --t: 5.714286cqw;
+    color: #FAC345;
+}
+
+.zapusk[data-faza='privet'] .nadpis_obnovleniya,
+.zapusk[data-faza='bloki'] .nadpis_obnovleniya,
+.zapusk[data-faza='privet'] .shkala_obnovleniya,
+.zapusk[data-faza='bloki'] .shkala_obnovleniya {
+    display: none;
+}
+
+.zapusk[data-faza='privet'] .avatar_os {
+    animation: pryzhok_os 2.2s ease-in-out infinite;
+}
+
+.zapusk[data-faza='privet'] .os_ochki {
+    animation: ochki_v_pryzhke 2.2s ease-in-out infinite;
+}
+
+.zapusk[data-faza='privet'] .os_blik_1,
+.zapusk[data-faza='privet'] .os_blik_3 {
+    animation: blik 2.2s ease-out 0.6s infinite;
+}
+
+.zapusk[data-faza='privet'] .os_blik_2 {
+    animation: blik 2.2s ease-out 0.9s infinite;
+}
+
+.zapusk_bloki {
+    display: none;
+    grid-template-columns: repeat(20, 1fr);
+    grid-template-rows: repeat(15, 1fr);
+}
+
+.zapusk[data-faza='bloki'] .zapusk_bloki,
+.zapusk[data-faza='skvoz'] .zapusk_bloki {
+    display: grid;
+}
+
+.zapusk_bloki span {
+    background: #2F374A;
+    opacity: 0;
+    animation:
+        blok_vhod 0.01s steps(1) var(--vhod) forwards,
+        blok_uhod 0.01s steps(1) var(--uhod) forwards;
+}
+
+@keyframes blok_vhod {
+    to { opacity: 1; }
+}
+
+@keyframes blok_uhod {
+    to { opacity: 0; }
+}
+
+.final {
+    position: absolute;
+    inset: 0;
+    z-index: 8;
+    background: #3D62A9;
+    color: #D9D9D9;
+    text-align: center;
+}
+
+.final > * {
+    position: absolute;
+    left: 0;
+    right: 0;
+    margin: 0;
+    opacity: 0;
+    animation: final_poyavlenie 0.9s ease-out forwards;
+}
+
+.final_avatar {
+    left: 35cqw;
+    right: auto;
+    top: 6.428571cqw;
+    width: 30cqw;
+    height: 22.642857cqw;
+    animation-delay: 0.2s;
+}
+
+.final_avatar .os_lico {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.final_avatar .os_ochki {
+    position: absolute;
+    left: 4.08%;
+    top: 44.5%;
+    width: 93.33%;
+    height: 33.15%;
+    animation: pod_ochki 2.4s ease-in-out 1.5s infinite;
+}
+
+.final_zagolovok {
+    top: 31.428571cqw;
+    --t: 6cqw;
+    text-transform: uppercase;
+    animation-delay: 1s;
+}
+
+.final_citata {
+    top: 40.714286cqw;
+    left: 14.285714cqw;
+    right: 14.285714cqw;
+    text-align: left;
+    animation-delay: 2.4s;
+}
+
+.final_mysl {
+    position: relative;
+    margin: 0;
+    padding: 0 0 0 4.285714cqw;
+    --t: 2.857143cqw;
+    line-height: calc(var(--t) * 1.4);
+    color: #FAC345;
+    min-height: calc(var(--t) * 1.4 * 3);
+}
+
+.final_mysl::before,
+.final_mysl::after {
+    position: absolute;
+    color: #FAC345;
+}
+
+.final_mysl::before {
+    content: '«';
+    left: 1.285714cqw;
+    top: 0;
+}
+
+.final_mysl::after {
+    content: none;
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+}
+
+.final_avtor {
+    margin: 1.285714cqw 0 0;
+    text-align: right;
+    --t: 2.142857cqw;
+    color: rgba(217, 217, 217, 0.85);
+    opacity: 0;
+    transition: opacity 0.6s ease-out;
+}
+
+.final.is-govorit .final_avatar {
+    opacity: 1;
+    animation: kivok 0.8s ease-in-out infinite;
+}
+
+.final.is-govorit .final_avatar .os_ochki {
+    animation: rech_ochki 0.5s steps(2, jump-none) infinite;
+}
+
+.final.is-dogovorila .final_mysl::after {
+    opacity: 0.8;
+}
+
+.final.is-dogovorila .final_avtor {
+    opacity: 1;
+}
+
+.final_knopka {
+    top: 61.428571cqw;
+    left: 37.857143cqw;
+    right: auto;
+    width: 24.285714cqw;
+    height: 5.714286cqw;
+    display: grid;
+    place-items: center;
+    color: var(--temnyy);
+    background: var(--salatovyy);
+    box-shadow: inset 0 0 0 0.285714cqw var(--temnyy), 0.428571cqw 0.428571cqw 0 rgba(39, 30, 23, 0.35);
+}
+
+.final > .final_knopka {
+    animation: none;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.final.is-dogovorila > .final_knopka {
+    animation: final_poyavlenie 0.9s ease-out 0.6s forwards;
+    pointer-events: auto;
+}
+
+.final_knopka .podpis_knopki {
+    --t: 2.428571cqw;
+}
+
+.final_knopka.is-hover {
+    background: #D3E0D2;
+}
+
+.final_knopka.is-nazhat {
+    background: #A9BCA8;
+}
+
+@keyframes final_poyavlenie {
+    0%   { opacity: 0; transform: translateY(1.428571cqw); }
+    100% { opacity: 1; transform: translateY(0); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .shum,
+    .vhs_polosa {
+        animation: none;
+    }
+
+    .okno.is-poyavlenie,
+    .nadpis_uspekh.is-pechat {
+        animation: none;
+    }
+}
+
+.ekran.is-legko .shum,
+.ekran.is-legko .vhs_polosa {
+    animation: none;
+}
+
+.ekran.is-bez-efektov .efekty {
+    display: none;
+}

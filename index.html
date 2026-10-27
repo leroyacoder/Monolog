@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Письмо из прошлого</title>
+    <meta name="theme-color" content="#0a0705">
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" href="img/favicon_32.png" type="image/png" sizes="32x32">
+    <link rel="icon" href="img/favicon_16.png" type="image/png" sizes="16x16">
+    <link rel="icon" href="img/favicon_48.png" type="image/png" sizes="48x48">
+    <link rel="apple-touch-icon" href="img/apple_touch_icon.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap">
+    <link rel="stylesheet" href="stylesheets/style.css?v=202610271936">
+</head>
+<body>
+    <main class="stranica">
+        <div class="ekran" id="ekran" data-god="2020">
+
+            <div class="iskrivlenie" id="iskrivlenie">
+                <div class="ploskost">
+
+                    <div class="fon" id="fon">
+                        <img class="fon_sloy" data-god="2020" src="img/fon_2020.webp" alt="">
+                        <img class="fon_sloy" data-god="2022" src="img/fon_2022.webp" alt="">
+                        <img class="fon_sloy" data-god="2024" src="img/fon_2024.webp" alt="">
+                        <img class="fon_sloy" data-god="2028" src="img/fon_2028.webp" alt="">
+                    </div>
+
+                    <div class="interfeys" id="interfeys">
+
+                        <div class="rabochiy_stol" id="rabochiy_stol">
+                            <button class="yarlyk yarlyk_readme is-podskazka" id="yarlyk_readme" data-deystvie="otkryt" data-tsel="readme">
+                                <img class="ikonka" src="img/ikonka_readme.svg" alt="">
+                                <span class="tablichka"><span class="podpis">README.txt</span></span>
+                            </button>
+                            <button class="yarlyk yarlyk_mail" id="yarlyk_mail" data-deystvie="otkryt" data-tsel="mail">
+                                <svg class="ikonka ikonka_konvert" viewBox="0 0 150 147" aria-hidden="true">
+                                    <rect class="konvert_zad" x="1.5" y="56.5" width="146.7" height="89" fill="#D29D1A" stroke="#271E17" stroke-width="3"/>
+                                    <polygon class="konvert_klapan_zad" points="1.5,56.5 74.86,1.5 148.21,56.5" fill="#D29D1A" stroke="#271E17" stroke-width="3" stroke-linejoin="bevel"/>
+                                    <clipPath id="konvert_obrezka"><rect x="0" y="-40" width="150" height="185"/></clipPath>
+                                    <g clip-path="url(#konvert_obrezka)">
+                                        <g class="konvert_bumazhka">
+                                            <rect x="17.47" y="23.43" width="116.66" height="96.08" fill="#D9D9D9" stroke="#271E17" stroke-width="3"/>
+                                            <rect x="41" y="49" width="69" height="3" fill="#271E17"/>
+                                            <rect x="41" y="71" width="69" height="3" fill="#271E17"/>
+                                        </g>
+                                    </g>
+                                    <polygon points="1.5,56.5 54,110 74.86,93 95.7,110 148.21,56.5 148.21,145.5 1.5,145.5" fill="#FAC345" stroke="#271E17" stroke-width="3" stroke-linejoin="bevel"/>
+                                    <polyline points="1.5,145.5 74.86,93 148.21,145.5" fill="none" stroke="#271E17" stroke-width="3" stroke-linejoin="bevel"/>
+                                    <polygon class="konvert_klapan" points="1.5,56.5 148.21,56.5 74.86,135" fill="#D29D1A" stroke="#271E17" stroke-width="3" stroke-linejoin="bevel"/>
+                                </svg>
+                                <span class="tablichka"><span class="podpis">мэил</span></span>
+                            </button>
+                            <button class="yarlyk yarlyk_papka" id="yarlyk_papka" data-deystvie="papka_stola" hidden>
+                                <img class="ikonka ikonka_zip" src="img/ikonka_zip.svg" alt="">
+                                <img class="ikonka ikonka_papki" src="img/ikonka_papki.svg" alt="">
+                                <span class="metka_zip">zip</span>
+                                <span class="tablichka"><span class="podpis">2018</span></span>
+                            </button>
+                        </div>
+
+                        <div class="okna" id="okna">
+
+                            <section class="okno okno_readme" id="okno_readme" data-okno="readme" data-nazvanie="README.txt" data-ikonka="img/ikonka_readme.svg" role="dialog" aria-label="README.txt" hidden>
+                                <header class="zagolovok" data-peretaskivanie>
+                                    <img class="zagolovok_ikonka" src="img/ikonka_readme.svg" alt="">
+                                    <span class="zagolovok_tekst">README.txt</span>
+                                    <div class="knopki_okna">
+                <button class="knopka_okna knopka_svernut" data-deystvie="svernut" aria-label="Свернуть"></button>
+                <button class="knopka_okna knopka_razvernut" data-deystvie="razvernut" aria-label="Развернуть"></button>
+                <button class="knopka_okna knopka_zakryt" data-deystvie="zakryt" aria-label="Закрыть"></button>
+            </div>
+                                </header>
+                                <div class="pole_belye">
+                                    <p class="tekst_polya">ты пишешь письма в&nbsp;будущее каждые 2 года</p>
+                                </div>
+                            </section>
+
+                            <section class="okno okno_mail" id="okno_mail" data-okno="mail" data-nazvanie="мэил" data-ikonka="img/ikonka_pochty_zakrytaya.svg" data-vid="papki" role="dialog" aria-label="мэил" hidden>
+                                <header class="zagolovok" data-peretaskivanie>
+                                    <img class="zagolovok_ikonka" src="img/ikonka_pochty_zakrytaya.svg" alt="">
+                                    <span class="zagolovok_tekst">мэил</span>
+                                    <div class="knopki_okna">
+                <button class="knopka_okna knopka_svernut" data-deystvie="svernut" aria-label="Свернуть"></button>
+                <button class="knopka_okna knopka_razvernut" data-deystvie="razvernut" aria-label="Развернуть"></button>
+                <button class="knopka_okna knopka_zakryt" data-deystvie="zakryt" aria-label="Закрыть"></button>
+            </div>
+                                </header>
+                                <div class="panel_knopok">
+                                    <button class="plashka_pochty plashka_vhodyashchie" id="plashka_vhodyashchie" data-deystvie="vhodyashchie">
+                                        <img class="ikonka" src="img/ikonka_vhodyashchie.svg" alt="">
+                                        <span class="podpis_plashki">входящие</span>
+                                    </button>
+                                    <button class="plashka_pochty plashka_otpravlennye" id="plashka_otpravlennye" data-deystvie="otpravlennye">
+                                        <img class="ikonka" src="img/ikonka_otpravlennye.svg" alt="">
+                                        <span class="podpis_plashki">отправленные</span>
+                                    </button>
+                                    <button class="plashka_pochty plashka_korzina" data-deystvie="pustaya_papka">
+                                        <img class="ikonka" src="img/ikonka_korzina.svg" alt="">
+                                        <span class="podpis_plashki">корзина</span>
+                                    </button>
+                                    <span class="linia linia_1"></span>
+                                    <span class="linia linia_2"></span>
+                                </div>
+                                <div class="znachok_uvedomleniya" id="znachok_pochty" hidden>1</div>
+                                <div class="pole_spiska" id="pole_spiska"></div>
+                                <div class="vid_pisma" id="vid_pisma">
+                                    <div class="shapka_pisma">
+                                        <span class="imya" id="pismo_imya"></span>
+                                        <button class="knopka_nazad" data-deystvie="nazad" aria-label="Назад к списку" title="Назад">
+                                            <img class="ikonka" src="img/ikonka_strelochki.svg" alt="">
+                                        </button>
+                                        <span class="data" id="pismo_data"></span>
+                                    </div>
+                                    <img class="zip_v_pisme" src="img/ikonka_zip.svg" alt="">
+                                    <span class="metka_zip_v_pisme">zip</span>
+                                    <div class="tablichka_v_pisme" id="pismo_zip_podpis"></div>
+                                    <p class="tekst_pisma" id="pismo_tekst"></p>
+                                    <button class="knopka_skachat" id="knopka_skachat" data-deystvie="skachat">
+                                        <img class="ikonka" src="img/ikonka_skachki.svg" alt="">
+                                        <span class="podpis_knopki">Скачать</span>
+                                    </button>
+                                </div>
+                            </section>
+
+                            <section class="okno okno_zagruzka" id="okno_zagruzka" data-okno="zagruzka" role="dialog" aria-label="скачивание" hidden>
+                                <header class="zagolovok" data-peretaskivanie>
+                                    <span class="zagolovok_tekst">скачивание</span>
+                                    <div class="knopki_okna" hidden>
+                <button class="knopka_okna knopka_zakryt" data-deystvie="zakryt" aria-label="Закрыть"></button>
+            </div>
+                                </header>
+                                <div class="pole_belye"></div>
+                                <img class="zip_mini" src="img/ikonka_zip.svg" alt="">
+                                <span class="metka_zip_mini">zip</span>
+                                <div class="tablichka_mini"><span class="podpis_mini">2018</span></div>
+                                <div class="panel_zagruzki">
+                <span class="kvadratik" style="--i:0"></span>
+                <span class="kvadratik" style="--i:1"></span>
+                <span class="kvadratik" style="--i:2"></span>
+                <span class="kvadratik" style="--i:3"></span>
+                <span class="kvadratik" style="--i:4"></span>
+                <span class="kvadratik" style="--i:5"></span>
+                <span class="kvadratik" style="--i:6"></span>
+                <span class="kvadratik" style="--i:7"></span>
+                <span class="kvadratik" style="--i:8"></span>
+                <span class="kvadratik" style="--i:9"></span>
+                <span class="kvadratik" style="--i:10"></span>
+                <span class="kvadratik" style="--i:11"></span>
+                <span class="kvadratik" style="--i:12"></span>
+                <span class="kvadratik" style="--i:13"></span>
+                <span class="kvadratik" style="--i:14"></span>
+                <span class="kvadratik" style="--i:15"></span>
+                <span class="kvadratik" style="--i:16"></span>
+                <span class="kvadratik" style="--i:17"></span>
+                <span class="kvadratik" style="--i:18"></span>
+                <span class="kvadratik" style="--i:19"></span>
+                <span class="kvadratik" style="--i:20"></span>
+                                </div>
+                                <p class="nadpis_uspekh" hidden>успешно завершено!</p>
+                            </section>
+
+                            <section class="okno okno_raspakovka" id="okno_raspakovka" data-okno="raspakovka" role="dialog" aria-label="распаковка" hidden>
+                                <header class="zagolovok" data-peretaskivanie>
+                                    <span class="zagolovok_tekst">распаковка</span>
+                                    <div class="knopki_okna" hidden>
+                <button class="knopka_okna knopka_zakryt" data-deystvie="zakryt" aria-label="Закрыть"></button>
+            </div>
+                                </header>
+                                <div class="pole_belye"></div>
+                                <img class="zip_mini" src="img/ikonka_zip.svg" alt="">
+                                <span class="metka_zip_mini">zip</span>
+                                <div class="tablichka_mini"><span class="podpis_mini">2018</span></div>
+                                <img class="strelka_raspakovki" src="img/ikonka_strelochki.svg" alt="">
+                                <img class="papka_cel_zip" src="img/ikonka_zip.svg" alt="">
+                                <img class="papka_mini" src="img/ikonka_papki.svg" alt="">
+                                <div class="tablichka_mini tablichka_mini_papki"><span class="podpis_mini">2018</span></div>
+                                <div class="panel_zagruzki">
+                <span class="kvadratik" style="--i:0"></span>
+                <span class="kvadratik" style="--i:1"></span>
+                <span class="kvadratik" style="--i:2"></span>
+                <span class="kvadratik" style="--i:3"></span>
+                <span class="kvadratik" style="--i:4"></span>
+                <span class="kvadratik" style="--i:5"></span>
+                <span class="kvadratik" style="--i:6"></span>
+                <span class="kvadratik" style="--i:7"></span>
+                <span class="kvadratik" style="--i:8"></span>
+                <span class="kvadratik" style="--i:9"></span>
+                <span class="kvadratik" style="--i:10"></span>
+                <span class="kvadratik" style="--i:11"></span>
+                <span class="kvadratik" style="--i:12"></span>
+                <span class="kvadratik" style="--i:13"></span>
+                <span class="kvadratik" style="--i:14"></span>
+                <span class="kvadratik" style="--i:15"></span>
+                <span class="kvadratik" style="--i:16"></span>
+                <span class="kvadratik" style="--i:17"></span>
+                <span class="kvadratik" style="--i:18"></span>
+                <span class="kvadratik" style="--i:19"></span>
+                <span class="kvadratik" style="--i:20"></span>
+                                </div>
+                                <p class="nadpis_uspekh" hidden>успешно завершено!</p>
+                            </section>
+
+                            <section class="okno okno_papka_2018" id="okno_papka_2018" data-okno="papka_2018" data-nazvanie="2018" data-ikonka="img/ikonka_papki.svg" role="dialog" aria-label="2018" hidden>
+                                <header class="zagolovok" data-peretaskivanie>
+                                    <img class="zagolovok_ikonka" src="img/ikonka_papki.svg" alt="">
+                                    <span class="zagolovok_tekst">2018</span>
+                                    <div class="knopki_okna">
+                <button class="knopka_okna knopka_svernut" data-deystvie="svernut" aria-label="Свернуть"></button>
+                <button class="knopka_okna knopka_razvernut" data-deystvie="razvernut" aria-label="Развернуть"></button>
+                <button class="knopka_okna knopka_zakryt" data-deystvie="zakryt" aria-label="Закрыть"></button>
+            </div>
+                                </header>
+                                <button class="ikonka_faila fail_pdf" data-deystvie="otkryt" data-tsel="pdf">
+                                    <img class="ikonka" src="img/ikonka_readme.svg" alt="">
+                                    <span class="tablichka"><span class="podpis">2018.pdf</span></span>
+                                </button>
+                                <button class="ikonka_faila fail_fotki" data-deystvie="otkryt" data-tsel="fotki">
+                                    <img class="ikonka" src="img/ikonka_papki.svg" alt="">
+                                    <span class="tablichka"><span class="podpis">фотки</span></span>
+                                </button>
+                            </section>
+
+                            <section class="okno okno_fotki" id="okno_fotki" data-okno="fotki" data-nazvanie="фотки" data-ikonka="img/ikonka_papki.svg" role="dialog" aria-label="фотки" hidden>
+                                <header class="zagolovok" data-peretaskivanie>
+                                    <img class="zagolovok_ikonka" src="img/ikonka_papki.svg" alt="">
+                                    <span class="zagolovok_tekst">фотки</span>
+                                    <div class="knopki_okna">
+                <button class="knopka_okna knopka_svernut" data-deystvie="svernut" aria-label="Свернуть"></button>
+                <button class="knopka_okna knopka_razvernut" data-deystvie="razvernut" aria-label="Развернуть"></button>
+                <button class="knopka_okna knopka_zakryt" data-deystvie="zakryt" aria-label="Закрыть"></button>
+            </div>
+                                </header>
+                                <div class="oblast_prokrutki" data-prokrutka>
+                                    <div class="lenta" id="lenta_fotok"></div>
+                                </div>
+                                <div class="polosa" data-polosa><span class="begunok"></span></div>
+                            </section>
+
+                            <section class="okno okno_pdf" id="okno_pdf" data-okno="pdf" data-nazvanie="2018.pdf" data-ikonka="img/ikonka_readme.svg" role="dialog" aria-label="2018.pdf" hidden>
+                                <header class="zagolovok" data-peretaskivanie>
+                                    <img class="zagolovok_ikonka" src="img/ikonka_readme.svg" alt="">
+                                    <span class="zagolovok_tekst">2018.pdf</span>
+                                    <div class="knopki_okna">
+                <button class="knopka_okna knopka_svernut" data-deystvie="svernut" aria-label="Свернуть"></button>
+                <button class="knopka_okna knopka_razvernut" data-deystvie="razvernut" aria-label="Развернуть"></button>
+                <button class="knopka_okna knopka_zakryt" data-deystvie="zakryt" aria-label="Закрыть"></button>
+            </div>
+                                </header>
+                                <div class="pole_belye" data-prokrutka>
+                                    <div class="tekst_pdf lenta" id="tekst_pdf"></div>
+                                </div>
+                                <div class="polosa" data-polosa><span class="begunok"></span></div>
+                            </section>
+
+                            <section class="okno okno_poisk" id="okno_poisk" data-okno="poisk" data-nazvanie="поиск" data-ikonka="img/ikonka_poisk.svg" role="dialog" aria-label="поиск" hidden>
+                                <header class="zagolovok" data-peretaskivanie>
+                                    <img class="zagolovok_ikonka" src="img/ikonka_poisk.svg" alt="">
+                                    <span class="zagolovok_tekst">поиск</span>
+                                    <div class="knopki_okna">
+                <button class="knopka_okna knopka_svernut" data-deystvie="svernut" aria-label="Свернуть"></button>
+                <button class="knopka_okna knopka_razvernut" data-deystvie="razvernut" aria-label="Развернуть"></button>
+                <button class="knopka_okna knopka_zakryt" data-deystvie="zakryt" aria-label="Закрыть"></button>
+            </div>
+                                </header>
+                                <label class="stroka_poiska" id="stroka_poiska">
+                                    <input class="vvod_poiska" id="vvod_poiska" type="text" placeholder="что ищем?" autocomplete="off" spellcheck="false" aria-label="Что ищем">
+                                </label>
+                                <button class="knopka_nayti" data-deystvie="nayti">
+                                    <span class="podpis_knopki">найти</span>
+                                </button>
+                                <div class="pole_rezultatov" data-prokrutka>
+                                    <div class="lenta" id="lenta_poiska"></div>
+                                </div>
+                                <div class="polosa" data-polosa><span class="begunok"></span></div>
+                            </section>
+
+                            <section class="okno okno_img" id="okno_img" data-okno="img" data-nazvanie="img" data-ikonka="img/ikonka_img.svg" role="dialog" aria-label="img" hidden>
+                                <header class="zagolovok" data-peretaskivanie>
+                                    <img class="zagolovok_ikonka" src="img/ikonka_img.svg" alt="">
+                                    <span class="zagolovok_tekst" id="img_nazvanie">img</span>
+                                    <div class="knopki_okna">
+                <button class="knopka_okna knopka_svernut" data-deystvie="svernut" aria-label="Свернуть"></button>
+                <button class="knopka_okna knopka_razvernut" data-deystvie="razvernut" aria-label="Развернуть"></button>
+                <button class="knopka_okna knopka_zakryt" data-deystvie="zakryt" aria-label="Закрыть"></button>
+            </div>
+                                </header>
+                                <div class="oblast_kartinki" data-prokrutka="vprityk">
+                                    <div class="lenta"><img class="kartinka" id="kartinka" src="img/foto_1.jpg" alt=""></div>
+                                </div>
+                                <div class="polosa" data-polosa><span class="begunok"></span></div>
+                            </section>
+
+                        </div>
+
+                        <footer class="podval" id="podval">
+                            <span class="razdelitel razdelitel_1"></span>
+                            <button class="knopka_puskach" id="knopka_puskach" data-deystvie="puskach" aria-haspopup="true" aria-expanded="false" aria-label="Пускач">
+                                <img class="ikonka_os" src="img/ikonka_os.png" alt="">
+                                <span class="podpis_puskach">ПУСКАЧ</span>
+                            </button>
+                            <div class="vkladki" id="vkladki"></div>
+                            <span class="razdelitel razdelitel_2"></span>
+                            <button class="knopka_zvuka" id="knopka_zvuka" data-deystvie="zvuk" aria-label="Громкость">
+                                <img class="ikonka_zvuka" src="img/ikonka_zvuka.svg" alt="">
+                            </button>
+                            <time class="chasy_data" id="chasy_data">22.10.20</time>
+                            <time class="chasy_vremya" id="chasy_vremya">19:24</time>
+                        </footer>
+
+                        <div class="uvedomlenie_os" id="uvedomlenie_os" role="status" hidden>
+                            <div class="avatar_mini">
+                                <img class="os_lico" src="img/os_lico.svg" alt="">
+                                <img class="os_ochki" src="img/os_ochki.svg" alt="">
+                            </div>
+                            <p class="uvedomlenie_tekst" id="uvedomlenie_tekst"></p>
+                            <p class="uvedomlenie_otschet" id="uvedomlenie_otschet" hidden>5</p>
+                            <button class="uvedomlenie_knopka" id="uvedomlenie_knopka" data-deystvie="obnovit_seychas" hidden><span class="podpis_knopki">обновить сейчас</span></button>
+                        </div>
+
+                        <nav class="menyu_puskach" id="menyu_puskach" aria-label="Пускач" hidden>
+                            <button class="plashka_menyu plashka_mail" data-deystvie="otkryt" data-tsel="mail">
+                                <img class="ikonka" src="img/ikonka_pochty_zakrytaya.svg" alt="">
+                                <span class="podpis_plashki">мэил</span>
+                            </button>
+                            <button class="plashka_menyu plashka_readme" data-deystvie="otkryt" data-tsel="readme">
+                                <img class="ikonka" src="img/ikonka_readme.svg" alt="">
+                                <span class="podpis_plashki">README.txt</span>
+                            </button>
+                            <button class="plashka_menyu plashka_papka" id="plashka_papka" data-deystvie="papka_stola" hidden>
+                                <img class="ikonka" src="img/ikonka_papki.svg" alt="">
+                                <span class="podpis_plashki">2018</span>
+                            </button>
+                            <button class="plashka_menyu plashka_poisk" data-deystvie="poisk">
+                                <img class="ikonka" src="img/ikonka_poisk.svg" alt="">
+                                <span class="podpis_plashki">поиск</span>
+                            </button>
+                            <button class="plashka_menyu plashka_perezagruzka" data-deystvie="perezagruzka">
+                                <img class="ikonka" src="img/ikonka_perezagruzka.svg" alt="">
+                                <span class="podpis_plashki">перезагрузка</span>
+                            </button>
+                        </nav>
+
+                        <div class="panel_zvuka" id="panel_zvuka" hidden>
+                            <div class="shkala_zvuka" id="shkala_zvuka" data-shkala>
+                                <span class="klin"></span>
+                                <span class="metka metka_1"></span>
+                                <span class="metka metka_2"></span>
+                                <span class="metka metka_3"></span>
+                                <span class="bokovaya"></span>
+                            </div>
+                            <span class="yarlyk_gromkosti" id="yarlyk_gromkosti" data-begunok-zvuka></span>
+                        </div>
+
+                    </div>
+
+                    <div class="peregruzka" id="peregruzka" aria-hidden="true">
+                        <div class="avatar_os">
+                            <div class="golova_os">
+                                <img class="os_lico" src="img/os_lico.svg" alt="">
+                                <img class="os_ochki" src="img/os_ochki.svg" alt="">
+                            </div>
+                            <img class="os_blik os_blik_1" src="img/os_blik.svg" alt="">
+                            <img class="os_blik os_blik_2" src="img/os_blik.svg" alt="">
+                            <img class="os_blik os_blik_3" src="img/os_blik.svg" alt="">
+                        </div>
+                        <p class="nadpis_obnovleniya" id="nadpis_obnovleniya">обновление системы</p>
+                        <div class="shkala_obnovleniya" id="shkala_obnovleniya"></div>
+                    </div>
+
+                    <div class="zapusk" id="zapusk" data-faza="vykl" aria-hidden="true">
+                        <div class="zapusk_vkl">
+                            <button class="knopka_pitaniya" id="knopka_pitaniya" type="button" aria-label="включить компьютер">
+                                <svg class="znak_pitaniya" viewBox="0 0 16 16" shape-rendering="crispEdges" aria-hidden="true">
+                                    <path d="M7 1h2v7H7zM4 3h2v2H4zM10 3h2v2h-2zM2 5h2v2H2zM12 5h2v2h-2zM1 7h2v3H1zM13 7h2v3h-2zM2 10h2v2H2zM12 10h2v2h-2zM4 12h2v2H4zM10 12h2v2h-2zM6 13h4v2H6z"/>
+                                </svg>
+                            </button>
+                            <p class="podskazka_vkl">нажмите, чтобы включить</p>
+                        </div>
+                        <div class="zapusk_luch"></div>
+                        <div class="zapusk_bios">
+                            <div class="bios_shapka">
+                                <div class="bios_logo">
+                                    <img class="os_lico" src="img/os_lico.svg" alt="">
+                                    <img class="os_ochki" src="img/os_ochki.svg" alt="">
+                                </div>
+                                <p class="bios_zagolovok">проверка системы</p>
+                                <p class="bios_versiya">сборка 22.10.18</p>
+                            </div>
+                            <div class="bios_stroki" id="zapusk_bios"></div>
+                        </div>
+                        <div class="zapusk_sistema">
+                            <div class="avatar_os">
+                                <div class="golova_os">
+                                    <img class="os_lico" src="img/os_lico.svg" alt="">
+                                    <img class="os_ochki" src="img/os_ochki.svg" alt="">
+                                </div>
+                                <img class="os_blik os_blik_1" src="img/os_blik.svg" alt="">
+                                <img class="os_blik os_blik_2" src="img/os_blik.svg" alt="">
+                                <img class="os_blik os_blik_3" src="img/os_blik.svg" alt="">
+                            </div>
+                            <p class="nadpis_obnovleniya" id="zapusk_nadpis">запуск системы</p>
+                            <div class="shkala_obnovleniya" id="zapusk_shkala"></div>
+                            <p class="zapusk_privet" id="zapusk_privet"></p>
+                        </div>
+                        <div class="zapusk_bloki" id="zapusk_bloki"></div>
+                    </div>
+
+                    <div class="final" id="final" hidden>
+                        <div class="final_avatar">
+                            <img class="os_lico" src="img/os_lico.svg" alt="">
+                            <img class="os_ochki" src="img/os_ochki.svg" alt="">
+                        </div>
+                        <p class="final_zagolovok">конец</p>
+                        <blockquote class="final_citata">
+                            <p class="final_mysl" id="final_mysl"></p>
+                            <p class="final_avtor">Лероя</p>
+                        </blockquote>
+                        <button class="final_knopka" data-deystvie="perezagruzka"><span class="podpis_knopki">начать заново</span></button>
+                    </div>
+                </div>
+            </div>
+
+            <div class="kursor" id="kursor" data-vid="strelka" aria-hidden="true">
+                <img class="kursor_strelka" src="img/kursor.png" alt="">
+                <img class="kursor_ew" src="img/kursor_ew.png" alt="">
+                <img class="kursor_ns" src="img/kursor_ns.png" alt="">
+                <img class="kursor_nwse" src="img/kursor_nwse.png" alt="">
+                <img class="kursor_nesw" src="img/kursor_nesw.png" alt="">
+            </div>
+
+            <div class="efekty" id="efekty" aria-hidden="true">
+                <div class="shum" id="shum"></div>
+                <div class="polosy"></div>
+                <div class="vhs_polosa"></div>
+                <div class="vhs_sbo" id="vhs_sbo"></div>
+                <svg class="steklo" viewBox="0 0 1400 1040" preserveAspectRatio="none" focusable="false">
+                    <defs>
+                        <path id="ekran_kontur" d="M54 5Q700 -5 1346 5Q1395 5 1395 58Q1405 520 1395 982Q1395 1035 1346 1035Q700 1045 54 1035Q5 1035 5 982Q-5 520 5 58Q5 5 54 5Z"/>
+                        <clipPath id="ekran_obrezka"><use href="#ekran_kontur"/></clipPath>
+                        <radialGradient id="steklo_vinetka" cx="50%" cy="50%" r="72%">
+                            <stop offset="0.52" stop-color="#000" stop-opacity="0"/>
+                            <stop offset="0.8" stop-color="#000" stop-opacity="0.16"/>
+                            <stop offset="1" stop-color="#000" stop-opacity="0.45"/>
+                        </radialGradient>
+                        <linearGradient id="steklo_blik" x1="0" y1="0" x2="1" y2="1">
+                            <stop offset="0" stop-color="#fff" stop-opacity="0.16"/>
+                            <stop offset="1" stop-color="#fff" stop-opacity="0"/>
+                        </linearGradient>
+                    </defs>
+                    <rect width="1400" height="1040" fill="url(#steklo_vinetka)" clip-path="url(#ekran_obrezka)"/>
+                    <g clip-path="url(#ekran_obrezka)" fill="none" stroke="#000">
+                        <use href="#ekran_kontur" stroke-width="64" stroke-opacity="0.05"/>
+                        <use href="#ekran_kontur" stroke-width="40" stroke-opacity="0.06"/>
+                        <use href="#ekran_kontur" stroke-width="22" stroke-opacity="0.08"/>
+                        <use href="#ekran_kontur" stroke-width="10" stroke-opacity="0.11"/>
+                    </g>
+                    <use href="#ekran_kontur" fill="none" stroke="#fff" stroke-opacity="0.34" stroke-width="3" clip-path="url(#ekran_obrezka)"/>
+                    <path d="M92 40L640 28L430 250L70 300Z" fill="url(#steklo_blik)" clip-path="url(#ekran_obrezka)"/>
+                    <path fill="#000" fill-rule="evenodd" d="M-20 -20H1420V1060H-20Z M54 5Q700 -5 1346 5Q1395 5 1395 58Q1405 520 1395 982Q1395 1035 1346 1035Q700 1045 54 1035Q5 1035 5 982Q-5 520 5 58Q5 5 54 5Z"/>
+                </svg>
+            </div>
+
+        </div>
+    </main>
+
+    <svg width="0" height="0" style="position:absolute" aria-hidden="true" focusable="false">
+        <defs>
+            <filter id="pikseli" x="0" y="0" width="100%" height="100%" color-interpolation-filters="sRGB">
+                <feGaussianBlur id="pikseli_razmytie" in="SourceGraphic" stdDeviation="0.6" result="razmytie"/>
+                <feFlood id="pikseli_tochka" x="1" y="1" width="1" height="1" flood-color="#000" flood-opacity="1"/>
+                <feComposite id="pikseli_yacheyka" width="3" height="3"/>
+                <feTile result="setka"/>
+                <feComposite in="razmytie" in2="setka" operator="in"/>
+                <feMorphology id="pikseli_blok" operator="dilate" radius="1"/>
+            </filter>
+        </defs>
+    </svg>
+
+    <script src="js_sound.js?v=202610271936"></script>
+    <script src="js_ekran.js?v=202610271936"></script>
+    <script src="js.js?v=202610271936"></script>
+</body>
+</html>
