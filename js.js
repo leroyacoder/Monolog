@@ -443,6 +443,7 @@
         okno.classList.remove('is-svernuto', 'is-razvernuto');
         ['left', 'top', 'width', 'height'].forEach((svoystvo) => okno.style.removeProperty(svoystvo));
         delete okno.dataset.otstupilo;
+        primenitRazmer(okno);
         rasstavit(okno);
         okno.classList.add('is-poyavlenie');
         window.setTimeout(() => okno.classList.remove('is-poyavlenie'), 300);
@@ -451,6 +452,19 @@
         playSfx('okno');
         izluchit('okno:otkryto', id);
         return okno;
+    }
+
+    function primenitRazmer(okno) {
+        if (!okno.dataset.razmer || okno.classList.contains('is-razvernuto')) return;
+        const [w, h] = okno.dataset.razmer.split(',').map(Number);
+        const g = geometriya(okno);
+        okno.style.width = edVCqw(w);
+        okno.style.height = edVCqw(h);
+        const x = zazhat(g.levo, KRAI_STOLA.levo, Math.max(KRAI_STOLA.levo, KRAI_STOLA.pravo - w));
+        const y = zazhat(g.verh, KRAI_STOLA.verh, Math.max(KRAI_STOLA.verh, KRAI_STOLA.niz - h));
+        okno.style.left = edVCqw(x);
+        okno.style.top = edVCqw(y);
+        izluchit('okno:izmeneno', okno.dataset.okno);
     }
 
     function zakryt(okno) {
@@ -637,6 +651,10 @@
 
     window.pismo.okna = {
         otkryt,
+        primenitRazmer: (id) => {
+            const okno = naiti(id);
+            if (okno && !okno.hidden) primenitRazmer(okno);
+        },
         zakryt: (id) => zakryt(naiti(id)),
         svernut: (id) => svernut(naiti(id)),
         naiti,
@@ -1082,6 +1100,33 @@
         });
     });
 
+    const RAMKA_FOTO_W = 51;
+    const RAMKA_FOTO_H = 189;
+    const FOTO_MAKS_W = 600;
+    const FOTO_MAKS_H = 620;
+    const FOTO_MIN_W = 300;
+    const zagruzhennyeFoto = {};
+    window.pismo.pisma.forEach((p) => window.pismo.fotkiPisma(p).forEach((adres) => {
+        if (zagruzhennyeFoto[adres]) return;
+        const kartinka = new Image();
+        kartinka.src = adres;
+        zagruzhennyeFoto[adres] = kartinka;
+    }));
+    function razmerOknaFoto(adres) {
+        const kartinka = zagruzhennyeFoto[adres];
+        if (!kartinka || !kartinka.naturalWidth) return null;
+        const dolya = kartinka.naturalHeight / kartinka.naturalWidth;
+        let w = FOTO_MAKS_W;
+        let h = w * dolya;
+        if (h > FOTO_MAKS_H) {
+            h = FOTO_MAKS_H;
+            w = h / dolya;
+        }
+        w = Math.max(FOTO_MIN_W, w);
+        h = w * dolya;
+        return [Math.round(w + RAMKA_FOTO_W), Math.round(h + RAMKA_FOTO_H)];
+    }
+
     deystviya.fail_img = (el) => {
         const n = Number(el.dataset.foto);
         const pismo = poArhivu(el.dataset.arhiv);
@@ -1090,7 +1135,17 @@
         const okno = okna.naiti(id);
         if (!okno) return;
         if (okno.hidden) {
-            okno.querySelector('.kartinka').src = fotki[(n - 1) % fotki.length];
+            const adres = fotki[(n - 1) % fotki.length];
+            const kartinka = okno.querySelector('.kartinka');
+            kartinka.src = adres;
+            const razmer = razmerOknaFoto(adres);
+            if (razmer) okno.dataset.razmer = razmer.join(',');
+            else kartinka.addEventListener('load', () => {
+                const r = razmerOknaFoto(adres);
+                if (!r || kartinka.getAttribute('src') !== adres) return;
+                okno.dataset.razmer = r.join(',');
+                okna.primenitRazmer(id);
+            }, { once: true });
             okno.querySelector('.zagolovok_tekst').textContent = el.dataset.podpis;
             okno.dataset.nazvanie = el.dataset.podpis;
             okno.setAttribute('aria-label', el.dataset.podpis);
