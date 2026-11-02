@@ -5,7 +5,14 @@ window.pismoEkran = {
     MAKET_W: 1400,
     MAKET_H: 1040,
     kursorZamok: () => {},
-    podognat: () => {}
+    podognat: () => {},
+    povernuto: () => document.documentElement.classList.contains('is-povorot'),
+    lokal: (clientX, clientY, r) => (window.pismoEkran.povernuto()
+        ? { x: clientY - r.top, y: r.right - clientX, w: r.height, h: r.width }
+        : { x: clientX - r.left, y: clientY - r.top, w: r.width, h: r.height }),
+    ramka: (ro, re) => (window.pismoEkran.povernuto()
+        ? { left: ro.top - re.top, top: re.right - ro.right, width: ro.height, height: ro.width }
+        : { left: ro.left - re.left, top: ro.top - re.top, width: ro.width, height: ro.height })
 };
 
 (function bezEffektov() {
@@ -41,7 +48,8 @@ window.pismoEkran = {
             if (!uzel) return;
             const diapazon = document.createRange();
             diapazon.selectNodeContents(uzel);
-            const natural = diapazon.getBoundingClientRect().width;
+            const pryamougolnik = diapazon.getBoundingClientRect();
+            const natural = window.pismoEkran.povernuto() ? pryamougolnik.height : pryamougolnik.width;
             if (!natural) return;
             const dostupno = shirinaRamki * masshtab;
             if (natural > dostupno) el.style.setProperty('--fit', (dostupno / natural).toFixed(4));

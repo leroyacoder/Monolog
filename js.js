@@ -144,8 +144,9 @@
         const r = ekran.getBoundingClientRect();
         const mx = window.pismoEkran ? window.pismoEkran.MAKET_W : 1400;
         const my = window.pismoEkran ? window.pismoEkran.MAKET_H : 1040;
-        const x = ((clientX - r.left) / r.width) * mx;
-        const y = ((clientY - r.top) / r.height) * my;
+        const l = window.pismoEkran.lokal(clientX, clientY, r);
+        const x = (l.x / l.w) * mx;
+        const y = (l.y / l.h) * my;
         return {
             x,
             y,
@@ -494,13 +495,13 @@
 
     function geometriya(okno) {
         const re = ekran.getBoundingClientRect();
-        const ro = okno.getBoundingClientRect();
-        const k = 1400 / re.width;
+        const b = window.pismoEkran.ramka(okno.getBoundingClientRect(), re);
+        const k = 1400 / window.pismoEkran.ramka(re, re).width;
         return {
-            levo: (ro.left - re.left) * k,
-            verh: (ro.top - re.top) * k,
-            shirina: ro.width * k,
-            vysota: ro.height * k
+            levo: b.left * k,
+            verh: b.top * k,
+            shirina: b.width * k,
+            vysota: b.height * k
         };
     }
 
@@ -1685,11 +1686,12 @@
         const z = poOknu(polosa.closest('.okno'));
         if (!z) return;
         const begunok = polosa.querySelector('.begunok');
-        const rBegunka = begunok.getBoundingClientRect();
         const ekranR = ekran.getBoundingClientRect();
+        const rBegunka = window.pismoEkran.ramka(begunok.getBoundingClientRect(), ekranR);
+        const vysotaEkrana = window.pismoEkran.ramka(ekranR, ekranR).height;
         const sy = k.sy;
-        const verhBegunka = ((rBegunka.top - ekranR.top) / ekranR.height) * 1040;
-        const vysotaBegunka = (rBegunka.height / ekranR.height) * 1040;
+        const verhBegunka = (rBegunka.top / vysotaEkrana) * 1040;
+        const vysotaBegunka = (rBegunka.height / vysotaEkrana) * 1040;
         const naBegunke = sy >= verhBegunka && sy <= verhBegunka + vysotaBegunka;
         tashchim = { z, sy0: sy, smeshchenie0: z.smeshchenie };
         if (!naBegunke) {

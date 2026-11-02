@@ -655,9 +655,9 @@
     margin: 0;
     padding: 0 0 0 4.285714cqw;
     --t: 2.857143cqw;
-    line-height: calc(var(--t) * 1.4);
+    line-height: calc(var(--t) * var(--ks, 1) * 1.4);
     color: #FAC345;
-    min-height: calc(var(--t) * 1.4 * 3);
+    min-height: calc(var(--t) * var(--ks, 1) * 1.4 * 3);
 }
 
 .final_mysl::before,

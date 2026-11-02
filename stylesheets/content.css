@@ -48,8 +48,8 @@ body {
 }
 
 .ekran * {
-    font-size: calc(var(--t) * var(--kf) * var(--fit, 1));
-    line-height: calc(var(--t) * 1.2);
+    font-size: calc(var(--t) * var(--kf) * var(--ks, 1) * var(--fit, 1));
+    line-height: calc(var(--t) * var(--ks, 1) * 1.2);
 }
 
 .js-kursor .ekran,
@@ -645,7 +645,7 @@ body {
     top: 5.142857cqw;
     transform: translateY(-50%);
     --t: 2.571429cqw;
-    line-height: calc(var(--t) * 1.25);
+    line-height: calc(var(--t) * var(--ks, 1) * 1.25);
 }
 
 .uvedomlenie_os .uvedomlenie_otschet {
